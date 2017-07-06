@@ -873,7 +873,7 @@ var LoginComponent = (function () {
     LoginComponent.prototype.login = function (user) {
         var _this = this;
         console.log(user);
-        this.loginService.url = "http://localhost:3030/users/login";
+        this.loginService.url = "users/login";
         this.loginService.data = user;
         this.loginService.postService().subscribe(function (res) {
             console.log(res['code']);

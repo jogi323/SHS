@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
 login(user){
   console.log(user);
-  this.loginService.url = "http://localhost:3030/users/login";
+  this.loginService.url = "users/login";
   this.loginService.data = user;
   this.loginService.postService().subscribe(res=>{
     console.log(res['code']);
