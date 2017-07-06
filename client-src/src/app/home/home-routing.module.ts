@@ -11,6 +11,7 @@ import { AcademicsComponent } from './components/academics/academics.component';
 import { FeestructureComponent } from './components/feestructure/feestructure.component';
 import { AdmissionsComponent } from './components/admissions/admissions.component';
 import { LoginComponent } from './components/login/login.component';
+import { HistoryComponent } from './components/history/history.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent,
@@ -24,7 +25,8 @@ const routes: Routes = [
       {path:'academics',component:AcademicsComponent},
       {path:'feedetails',component:FeestructureComponent},
       {path:'admissions',component:AdmissionsComponent},
-      {path:'login',component:LoginComponent},                       
+      {path:'login',component:LoginComponent},
+      {path:'history',component:HistoryComponent},                       
     ]
   }
 ];

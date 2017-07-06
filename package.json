@@ -2,13 +2,14 @@
   "name": "myapplication",
   "version": "0.0.0",
   "private": true,
-    "engines": {
+  "engines": {
     "node": "6.11.0"
   },
   "scripts": {
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "angular2-flash-messages": "^1.0.8",
     "body-parser": "~1.16.0",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.3",

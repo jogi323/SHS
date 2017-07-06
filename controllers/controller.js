@@ -31,23 +31,21 @@ exports.register = function(req,res){
 
 //Login Controller
 exports.login = function(req,res){
-    var usernameType = typeof(req.body.username);
-    //console.log(usernameType  == 'string');
-    if(usernameType  == 'string'){
-        console.log('String')
-    }else if(usernameType == 'number'){
-        console.log('Number');
-        connection.find({$and:[{mobileNumber:req.body.username},{password:req.body.password}]},function(err,data){
-            if(err){
-                throw err;
-            }else{
-                if(data[0] != null){
-                    res.json({code:1,msg:'Successfully LOggedIn.'}); 
+    connection.find({$or:[{email:req.body.username},{mobileNumber:req.body.username}]},function(err,data){
+        if(err){
+            throw err;
+        }else if(data[0] != null){
+            connection.find({password:req.body.password},function(err,docs){
+                if(err){
+                    throw err;
+                }else if(docs[0] != null){
+                    res.json({code:1,msg:'LoggedIn successfully.'});
                 }else{
-                    res.json({code:2,msg:'Invalid Credentials.'});
+                    res.json({code:2,msg:'Wrong Password.'});
                 }
-            }
-        });
-    }
-  
+            });
+        }else{
+            res.json({code:3,msg:'Invalid Username.'});
+        }
+    });  
 }

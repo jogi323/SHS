@@ -1,3 +1,49 @@
-<p>
-  login works!
-</p>
+<div class="container ">
+	<div class="row">
+    <div class="col-md-6 col-md-offset-3 well">
+      <h4>Login here!</h4>
+      <form novalidate>
+        <!--<div class="social-box">
+          <div class="row mg-btm">
+            <div class="col-md-8 col-md-offset-2">
+              <a href="#" class="btn btn-primary btn-block">
+                <i class="icon-facebook"></i>    Login with Facebook
+              </a>
+          </div>
+          </div>
+          <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+              <a href="#" class="btn btn-info btn-block" >
+                <i class="icon-twitter"></i>    Login with Twitter
+              </a>
+            </div>
+          </div>
+        </div>-->
+      <img src="assets/images/5.jpg" class="img-circle col-md-offset-3" alt="Cinque Terre" width="250" height="200"> 
+      <div class="col-md-8 col-md-offset-2 form-group">
+        <div class="username">
+          <label for="username">Username :</label>
+          <input type="text" class="form-control" name="username" [(ngModel)]="user.username" placeholder="Enter your Email or phone number" #username="ngModel">   
+        </div>
+        <div class="Password">
+          <label for="Password">Password :</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="user.password" placeholder="Enter your password" #password="ngModel">   
+        </div>		    
+        <button type="submit" class="btn btn-large btn-danger" (click)="login(user)">Login</button>
+        <a href="" class="pull-right" id="forgot">Forgot Password?</a>
+        <!--<p>Already have an account? <a href="">Sign Up</a></p>	-->
+      </div>
+      <!--<div class="login-footer">
+        <div class="row">
+          <div class="col-xs-6 col-md-8 col-md-offset-2">
+            <div class="left-section">
+              <a href="">Forgot your password?</a><br>
+              <a href="">Sign up now</a>
+            </div>
+          </div>
+        </div>
+      </div>-->
+    </form>
+    </div>
+	</div>
+</div>

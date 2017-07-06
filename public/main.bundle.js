@@ -19,6 +19,7 @@ webpackEmptyContext.id = "../../../../../src async recursive";
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__admin_component__ = __webpack_require__("../../../../../src/app/admin/admin.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -28,7 +29,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 
 
-var routes = [];
+
+var routes = [
+    { path: 'admin', component: __WEBPACK_IMPORTED_MODULE_2__admin_component__["a" /* AdminComponent */] }
+];
 var AdminRoutingModule = (function () {
     function AdminRoutingModule() {
     }
@@ -133,7 +137,7 @@ var AdminModule = (function () {
 AdminModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["i" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_2__admin_routing_module__["a" /* AdminRoutingModule */]
         ],
         declarations: [__WEBPACK_IMPORTED_MODULE_3__admin_component__["a" /* AdminComponent */]]
@@ -224,8 +228,9 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home_module__ = __webpack_require__("../../../../../src/app/home/home.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__admin_admin_module__ = __webpack_require__("../../../../../src/app/admin/admin.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_service__ = __webpack_require__("../../../../../src/app/app.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -240,6 +245,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //Lazy Loading Modules
 
 
+//Services 
+
 //Main Routing File
 
 //components
@@ -252,7 +259,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         declarations: [
-            __WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */],
+            __WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */],
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -260,14 +267,61 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_4__home_home_module__["a" /* HomeModule */],
             __WEBPACK_IMPORTED_MODULE_5__admin_admin_module__["a" /* AdminModule */],
-            __WEBPACK_IMPORTED_MODULE_6__app_routing_module__["a" /* routing */]
+            __WEBPACK_IMPORTED_MODULE_7__app_routing_module__["a" /* routing */]
         ],
-        providers: [],
-        bootstrap: [__WEBPACK_IMPORTED_MODULE_7__app_component__["a" /* AppComponent */]]
+        providers: [__WEBPACK_IMPORTED_MODULE_6__app_service__["a" /* AppService */]],
+        bootstrap: [__WEBPACK_IMPORTED_MODULE_8__app_component__["a" /* AppComponent */]]
     })
 ], AppModule);
 
 //# sourceMappingURL=app.module.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/app.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__("../../../http/@angular/http.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AppService = (function () {
+    function AppService(http) {
+        this.http = http;
+    }
+    AppService.prototype.getService = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */];
+        headers.append('content-type', 'application/json;charset=utf-8');
+        return this.http.get(this.url, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    AppService.prototype.postService = function () {
+        var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Headers */];
+        headers.append('content-type', 'application/json;charset=utf-8');
+        return this.http.post(this.url, this.data, { headers: headers }).map(function (res) { return res.json(); });
+    };
+    return AppService;
+}());
+AppService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
+], AppService);
+
+var _a;
+//# sourceMappingURL=app.service.js.map
 
 /***/ }),
 
@@ -292,7 +346,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/components/aboutus/aboutus.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  aboutus works!\n</p>\n"
+module.exports = "<div class=\"container well\">\n    <div class=\"row\">\n        <div class=\"col-md-10 col-md-offset-1\"> \n            <h1 class=\"entry-title\">School History</h1>\n            <div class=\"content\">\n              <p >Our renowned institution was founded as a primary school on 14th April 1993 by Mr. R.B.Laxmana Rao along with Kanchipati Jaganadha Rao.  Many munificent persons like Sri Mukka Mahalaxmi Naidu garu ,R.Prasad Rao  played a pivotol role in the growth of Town High School.</p>\n            </div>\n        </div>   \n    </div>\n</div>\n  "
 
 /***/ }),
 
@@ -475,7 +529,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/components/contactus/contactus.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "  <div class=\"contact-us\">\n       <div class=\"container\">\n          <div class=\"contact-form\">\n           <div class=\"row\">\n               <div class=\"col-sm-7\">                  \n                    <form id=\"ajax-contact\"  method=\"post\" action=\"contact-form-mail.php\" role=\"form\">\n                        <div class=\"messages\" id=\"form-messages\"></div>\n                        <div class=\"controls\">\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_name\">Firstname *</label>\n                                        <input id=\"form_name\" type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Please enter your firstname *\" required=\"required\" data-error=\"Firstname is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_lastname\">Lastname *</label>\n                                        <input id=\"form_lastname\" type=\"text\" name=\"surname\" class=\"form-control\" placeholder=\"Please enter your lastname *\" required=\"required\" data-error=\"Lastname is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_email\">Email *</label>\n                                        <input id=\"form_email\" type=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Please enter your email *\" required=\"required\" data-error=\"Valid email is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_phone\">Phone*</label>\n                                        <input id=\"form_phone\" type=\"tel\" name=\"phone\"  class=\"form-control\" placeholder=\"Please enter your phone*\" required oninvalid=\"setCustomValidity('Plz enter your correct phone number ')\"\n    onchange=\"try{setCustomValidity('')}catch(e){}\">\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_message\">Message *</label>\n                                        <textarea id=\"form_message\" name=\"message\" class=\"form-control\" placeholder=\"Message for me *\" rows=\"4\" required=\"required\" data-error=\"Please,leave us a message.\"></textarea>\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-12\">\n                                    <input type=\"submit\" class=\"btn btn-black\" value=\"Send message\">\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                   <br>\n                                    <small class=\"text-muted\"><strong>*</strong> These fields are required.</small>\n                                </div>\n                            </div>\n                        </div>\n\n                    </form>\n    \n               </div>\n               <div class=\"col-sm-5\">\n                   <div class=\"row col1\">\n                       <div class=\"col-xs-3\">\n                           <i class=\"fa fa-map-marker\" style=\"font-size:16px;\"></i>   Address\n                       </div>\n                       <div class=\"col-xs-9\">\n                           Siddhardha High School,<br> Ravikamatham,Visakha patnam,<br> Andhra Pradsh,Pin-code:531025.\n                       </div>\n                   </div>\n                   \n                    <div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                            <i class=\"fa fa-phone\"></i>   Phone\n                        </div>\n                        <div class=\"col-sm-9\">\n                             +(91) 9010698030\n                        </div>\n                    </div>\n                    <!--<div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                             <i class=\"fa fa-fax\"></i>    Fax  \n                        </div>\n                        <div class=\"col-sm-9\">\n                              123 123 4567\n                        </div>\n                    </div>-->\n                    <div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                            <i class=\"fa fa-envelope\"></i>   Email\n                        </div>\n                        <div class=\"col-sm-9\">\n                             <a href=\"mailto:siddhardhahighscool@gmail.com\">siddhardhahighscool@gmail.com</a> <br> \n                        </div>\n                    </div><br>\n                    <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.9692426364104!2d82.80183311432528!3d17.793142587836638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39846b9226fd4d%3A0xa678619796e4f8c1!2sSiddhardha+High+School!5e0!3m2!1sen!2sin!4v1499323415772\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>\n               </div>\n           </div>\n           \n          </div>\n       </div>\n   </div>\n"
+module.exports = "  <div class=\"contact-us\">\n       <div class=\"container well\">\n          <div class=\"contact-form\">\n            <h3>You can contact us through Email.</h3>\n           <div class=\"row\">\n               <div class=\"col-sm-7\">                  \n                    <form id=\"ajax-contact\"  method=\"post\" action=\"contact-form-mail.php\" role=\"form\">\n                        <div class=\"messages\" id=\"form-messages\"></div>\n                        <div class=\"controls\">\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_name\">Firstname *</label>\n                                        <input id=\"form_name\" type=\"text\" name=\"name\" class=\"form-control\" placeholder=\"Please enter your firstname *\" required=\"required\" data-error=\"Firstname is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_lastname\">Lastname *</label>\n                                        <input id=\"form_lastname\" type=\"text\" name=\"surname\" class=\"form-control\" placeholder=\"Please enter your lastname *\" required=\"required\" data-error=\"Lastname is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_email\">Email *</label>\n                                        <input id=\"form_email\" type=\"email\" name=\"email\" class=\"form-control\" placeholder=\"Please enter your email *\" required=\"required\" data-error=\"Valid email is required.\">\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-6\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_phone\">Phone*</label>\n                                        <input id=\"form_phone\" type=\"tel\" name=\"phone\"  class=\"form-control\" placeholder=\"Please enter your phone*\" required oninvalid=\"setCustomValidity('Plz enter your correct phone number ')\"\n                                            onchange=\"try{setCustomValidity('')}catch(e){}\">\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"form-group\">\n                                        <label for=\"form_message\">Message *</label>\n                                        <textarea id=\"form_message\" name=\"message\" class=\"form-control\" placeholder=\"Message for me *\" rows=\"4\" required=\"required\" data-error=\"Please,leave us a message.\"></textarea>\n                                        <div class=\"help-block with-errors\"></div>\n                                    </div>\n                                </div>\n                                <div class=\"col-md-12\">\n                                    <input type=\"submit\" class=\"btn btn-black\" value=\"Send message\">\n                                </div>\n                            </div>\n                            <div class=\"row\">\n                                <div class=\"col-md-12\">\n                                   <br>\n                                    <small class=\"text-muted\"><strong>*</strong> These fields are required.</small>\n                                </div>\n                            </div>\n                        </div>\n\n                    </form>\n    \n               </div>\n               <div class=\"col-sm-5\">\n                   <div class=\"row col1\">\n                       <div class=\"col-xs-3\">\n                           <i class=\"fa fa-map-marker\" style=\"font-size:16px;\"></i>   Address\n                       </div>\n                       <div class=\"col-xs-9\">\n                           Siddhardha High School,<br> Ravikamatham,Visakha patnam,<br> Andhra Pradsh,Pin-code:531025.\n                       </div>\n                   </div>\n                   \n                    <div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                            <i class=\"fa fa-phone\"></i>   Phone\n                        </div>\n                        <div class=\"col-sm-9\">\n                             +(91) 9010698030\n                        </div>\n                    </div>\n                    <!--<div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                             <i class=\"fa fa-fax\"></i>    Fax  \n                        </div>\n                        <div class=\"col-sm-9\">\n                              123 123 4567\n                        </div>\n                    </div>-->\n                    <div class=\"row col1\">\n                        <div class=\"col-sm-3\">\n                            <i class=\"fa fa-envelope\"></i>   Email\n                        </div>\n                        <div class=\"col-sm-9\">\n                             <a href=\"mailto:siddhardhahighscool@gmail.com\">siddhardhahighscool@gmail.com</a> <br> \n                        </div>\n                    </div><br>\n                    <iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.9692426364104!2d82.80183311432528!3d17.793142587836638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39846b9226fd4d%3A0xa678619796e4f8c1!2sSiddhardha+High+School!5e0!3m2!1sen!2sin!4v1499323415772\" width=\"450\" height=\"450\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>\n               </div>\n           </div>\n           \n          </div>\n       </div>\n   </div>\n"
 
 /***/ }),
 
@@ -597,7 +651,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/components/employment/employment.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  employment works!\n</p>\n"
+module.exports = "<div class=\"container well\">\n    <div class=\"row\">\n        <div class=\"col-md-8\"> \n            <h3>Currently we don't have any openings.We will post once we have.</h3>\n        </div>   \n    </div>\n</div>\n  "
 
 /***/ }),
 
@@ -698,7 +752,7 @@ FeestructureComponent = __decorate([
 
 /***/ }),
 
-/***/ "../../../../../src/app/home/components/login/login.component.css":
+/***/ "../../../../../src/app/home/components/history/history.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
@@ -716,19 +770,19 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ "../../../../../src/app/home/components/login/login.component.html":
+/***/ "../../../../../src/app/home/components/history/history.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  login works!\n</p>\n"
+module.exports = "<p>\n  history works!\n</p>\n"
 
 /***/ }),
 
-/***/ "../../../../../src/app/home/components/login/login.component.ts":
+/***/ "../../../../../src/app/home/components/history/history.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HistoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -739,10 +793,103 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+var HistoryComponent = (function () {
+    function HistoryComponent() {
+    }
+    HistoryComponent.prototype.ngOnInit = function () {
+    };
+    return HistoryComponent;
+}());
+HistoryComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_10" /* Component */])({
+        selector: 'app-history',
+        template: __webpack_require__("../../../../../src/app/home/components/history/history.component.html"),
+        styles: [__webpack_require__("../../../../../src/app/home/components/history/history.component.css")]
+    }),
+    __metadata("design:paramtypes", [])
+], HistoryComponent);
+
+//# sourceMappingURL=history.component.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/components/login/login.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".col-md-8.col-md-offset-2{\r\n    padding-bottom: 10px;\r\n}\r\n.btn-danger{\r\n    margin-top: 15px;\r\n}\r\n#forgot{\r\n    margin-top: 20px;\r\n}\r\n.username {\r\n    margin-top: 5%;\r\n    margin-bottom: 5%;\r\n}", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/components/login/login.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container \">\n\t<div class=\"row\">\n    <div class=\"col-md-6 col-md-offset-3 well\">\n      <h4>Login here!</h4>\n      <form novalidate>\n        <!--<div class=\"social-box\">\n          <div class=\"row mg-btm\">\n            <div class=\"col-md-8 col-md-offset-2\">\n              <a href=\"#\" class=\"btn btn-primary btn-block\">\n                <i class=\"icon-facebook\"></i>    Login with Facebook\n              </a>\n          </div>\n          </div>\n          <div class=\"row\">\n          <div class=\"col-md-8 col-md-offset-2\">\n              <a href=\"#\" class=\"btn btn-info btn-block\" >\n                <i class=\"icon-twitter\"></i>    Login with Twitter\n              </a>\n            </div>\n          </div>\n        </div>-->\n      <img src=\"assets/images/5.jpg\" class=\"img-circle col-md-offset-3\" alt=\"Cinque Terre\" width=\"250\" height=\"200\"> \n      <div class=\"col-md-8 col-md-offset-2 form-group\">\n        <div class=\"username\">\n          <label for=\"username\">Username :</label>\n          <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"user.username\" placeholder=\"Enter your Email or phone number\" #username=\"ngModel\">   \n        </div>\n        <div class=\"Password\">\n          <label for=\"Password\">Password :</label>\n          <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"user.password\" placeholder=\"Enter your password\" #password=\"ngModel\">   \n        </div>\t\t    \n        <button type=\"submit\" class=\"btn btn-large btn-danger\" (click)=\"login(user)\">Login</button>\n        <a href=\"\" class=\"pull-right\" id=\"forgot\">Forgot Password?</a>\n        <!--<p>Already have an account? <a href=\"\">Sign Up</a></p>\t-->\n      </div>\n      <!--<div class=\"login-footer\">\n        <div class=\"row\">\n          <div class=\"col-xs-6 col-md-8 col-md-offset-2\">\n            <div class=\"left-section\">\n              <a href=\"\">Forgot your password?</a><br>\n              <a href=\"\">Sign up now</a>\n            </div>\n          </div>\n        </div>\n      </div>-->\n    </form>\n    </div>\n\t</div>\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/home/components/login/login.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_service__ = __webpack_require__("../../../../../src/app/app.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
+/* unused harmony export userInterface */
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
 var LoginComponent = (function () {
-    function LoginComponent() {
+    function LoginComponent(loginService, router) {
+        this.loginService = loginService;
+        this.router = router;
+        this.user = {
+            username: '',
+            password: ''
+        };
     }
     LoginComponent.prototype.ngOnInit = function () {
+    };
+    LoginComponent.prototype.login = function (user) {
+        var _this = this;
+        console.log(user);
+        this.loginService.url = "http://localhost:3030/users/login";
+        this.loginService.data = user;
+        this.loginService.postService().subscribe(function (res) {
+            console.log(res['code']);
+            if (res['code'] == 1) {
+                alert('loggedIn');
+                _this.router.navigate(['admin']);
+            }
+            else if (res['code'] == 2) {
+                alert('wrong password');
+                _this.router.navigate(['login']);
+            }
+            else if (res['code'] == 3) {
+                alert('Wrong username');
+                _this.router.navigate(['login']);
+            }
+        });
     };
     return LoginComponent;
 }());
@@ -752,9 +899,16 @@ LoginComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/home/components/login/login.component.html"),
         styles: [__webpack_require__("../../../../../src/app/home/components/login/login.component.css")]
     }),
-    __metadata("design:paramtypes", [])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__app_service__["a" /* AppService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__app_service__["a" /* AppService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], LoginComponent);
 
+var userInterface = (function () {
+    function userInterface() {
+    }
+    return userInterface;
+}());
+
+var _a, _b;
 //# sourceMappingURL=login.component.js.map
 
 /***/ }),
@@ -767,7 +921,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".navbar-inverse{\r\n    background-color: rgba(4, 2, 3, 0.46) !important;\r\n    border-color: white !important;    \r\n}\r\n.navbar-inverse .navbar-nav>li>a{\r\n    color:white;\r\n}\r\nul li:hover {\r\n    background-color: #d04444;\r\n}\r\na.active{\r\n    background-color: black !important;\r\n    /*color: red !important;*/\r\n}\r\na.active[_ngcontent-c2]{\r\n    color: white;\r\n}\r\n.dropdown-menu{\r\n    background-color: rgba(4, 2, 3, 0.46) !important; \r\n  \r\n}\r\n.dropdown-menu li a{\r\n    color: white !important;\r\n}\r\n.dropdown-menu li:hover a{\r\n    background-color: #d04444 !important;\r\n    color: white !important;\r\n}", ""]);
+exports.push([module.i, ".navbar-inverse{\r\n    background-color: rgba(4, 2, 3, 0.46) !important;\r\n    border-color: white !important;    \r\n}\r\n.navbar-inverse .navbar-nav>li>a{\r\n    color:white;\r\n}\r\nul li:hover {\r\n    background-color: #d04444;\r\n}\r\na.active{\r\n    background-color: #b56666 !important;\r\n    /*color: red !important;*/\r\n}\r\n/*a.active[_ngcontent-c2]{\r\n    color: white;\r\n}*/\r\n.dropdown-menu{\r\n    background-color: rgba(4, 2, 3, 0.46) !important; \r\n  \r\n}\r\n.dropdown-menu li a{\r\n    color: white !important;\r\n}\r\n.dropdown-menu li:hover a{\r\n    background-color: #d04444 !important;\r\n    color: white !important;\r\n}", ""]);
 
 // exports
 
@@ -780,7 +934,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/home/components/navbar/navbar.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" [routerLink]=\"['']\"></a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <!--<li><a [routerLink]=\"['/aboutus']\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>-->\n        <li><a routerLink=\"/login\"  routerLinkActive=\"active\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-left\">\n        <li><a routerLink=\"/dashboard\"  routerLinkActive=\"active\">Home</a></li>\n        <li class=\"dropdown\">\n          <a class=\"dropdown-toggle\" data-toggle=\"dropdown\">Our School<span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\">\n              <li><a routerLink=\"/academics\"  routerLinkActive=\"active\">Academics</a></li>\n              <li><a routerLink=\"/feedetails\" routerLinkActive=\"active\">Admissions</a></li>\n              <li><a routerLink=\"/admissions\"  routerLinkActive=\"active\">Fee Structure</a></li>\n            </ul>     \n        </li>\n        <li><a routerLink=\"/aboutus\"  routerLinkActive=\"active\">About US</a></li>\n        <li><a routerLink=\"/news\"  routerLinkActive=\"active\">News</a></li>\n        <li><a routerLink=\"/employment\" routerLinkActive=\"active\">Employment</a></li>\n        <li><a routerLink=\"/contactus\" routerLinkActive=\"active\">Contact US</a></li>\n        <!--<li><a routerLink=\"/aboutus\" routerLinkActive=\"active\">Dashboard</a></li>\n        <li><a routerLink=\"/employment\" routerLinkActive=\"active\">Heroes</a></li>\n   -->\n      </ul>\n    </div>\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-inverse\">\n  <div class=\"container-fluid\">\n    <div class=\"navbar-header\">\n      <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#myNavbar\">\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>\n        <span class=\"icon-bar\"></span>                        \n      </button>\n      <a class=\"navbar-brand\" [routerLink]=\"['']\"></a>\n    </div>\n    <div class=\"collapse navbar-collapse\" id=\"myNavbar\">\n      <ul class=\"nav navbar-nav navbar-right\">\n        <!--<li><a [routerLink]=\"['/aboutus']\"><span class=\"glyphicon glyphicon-user\"></span> Sign Up</a></li>-->\n        <li><a routerLink=\"/login\"  routerLinkActive=\"active\"><span class=\"glyphicon glyphicon-log-in\"></span> Login</a></li>\n      </ul>\n      <ul class=\"nav navbar-nav navbar-left\">\n        <li><a routerLink=\"/dashboard\"  routerLinkActive=\"active\">Home</a></li>\n        <li class=\"dropdown\">\n          <a class=\"dropdown-toggle\" data-toggle=\"dropdown\">Our School<span class=\"caret\"></span></a>\n            <ul class=\"dropdown-menu\">\n              <!--<li><a routerLink=\"/history\"  routerLinkActive=\"active\">History</a></li>-->\n              <li><a routerLink=\"/academics\"  routerLinkActive=\"active\">Academics</a></li>\n              <li><a routerLink=\"/feedetails\" routerLinkActive=\"active\">Admissions</a></li>\n              <li><a routerLink=\"/admissions\"  routerLinkActive=\"active\">Fee Structure</a></li>\n            </ul>     \n        </li>\n        <li><a routerLink=\"/aboutus\"  routerLinkActive=\"active\">About US</a></li>\n        <li><a routerLink=\"/news\"  routerLinkActive=\"active\">News</a></li>\n        <li><a routerLink=\"/employment\" routerLinkActive=\"active\">Employment</a></li>\n        <li><a routerLink=\"/contactus\" routerLinkActive=\"active\">Contact US</a></li>\n        <!--<li><a routerLink=\"/aboutus\" routerLinkActive=\"active\">Dashboard</a></li>\n        <li><a routerLink=\"/employment\" routerLinkActive=\"active\">Heroes</a></li>\n   -->\n      </ul>\n    </div>\n  </div>\n</nav>"
 
 /***/ }),
 
@@ -897,6 +1051,7 @@ NewsComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_feestructure_feestructure_component__ = __webpack_require__("../../../../../src/app/home/components/feestructure/feestructure.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_admissions_admissions_component__ = __webpack_require__("../../../../../src/app/home/components/admissions/admissions.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__ = __webpack_require__("../../../../../src/app/home/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_history_history_component__ = __webpack_require__("../../../../../src/app/home/components/history/history.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeRoutingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -904,6 +1059,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -929,6 +1085,7 @@ var routes = [
             { path: 'feedetails', component: __WEBPACK_IMPORTED_MODULE_9__components_feestructure_feestructure_component__["a" /* FeestructureComponent */] },
             { path: 'admissions', component: __WEBPACK_IMPORTED_MODULE_10__components_admissions_admissions_component__["a" /* AdmissionsComponent */] },
             { path: 'login', component: __WEBPACK_IMPORTED_MODULE_11__components_login_login_component__["a" /* LoginComponent */] },
+            { path: 'history', component: __WEBPACK_IMPORTED_MODULE_12__components_history_history_component__["a" /* HistoryComponent */] },
         ]
     }
 ];
@@ -1015,18 +1172,20 @@ HomeComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_routing_module__ = __webpack_require__("../../../../../src/app/home/home-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/home/components/dashboard/dashboard.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_aboutus_aboutus_component__ = __webpack_require__("../../../../../src/app/home/components/aboutus/aboutus.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_contactus_contactus_component__ = __webpack_require__("../../../../../src/app/home/components/contactus/contactus.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/home/components/navbar/navbar.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_news_news_component__ = __webpack_require__("../../../../../src/app/home/components/news/news.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_employment_employment_component__ = __webpack_require__("../../../../../src/app/home/components/employment/employment.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_academics_academics_component__ = __webpack_require__("../../../../../src/app/home/components/academics/academics.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_feestructure_feestructure_component__ = __webpack_require__("../../../../../src/app/home/components/feestructure/feestructure.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_admissions_admissions_component__ = __webpack_require__("../../../../../src/app/home/components/admissions/admissions.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__ = __webpack_require__("../../../../../src/app/home/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/@angular/forms.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_routing_module__ = __webpack_require__("../../../../../src/app/home/home-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_component__ = __webpack_require__("../../../../../src/app/home/home.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__ = __webpack_require__("../../../../../src/app/home/components/dashboard/dashboard.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_aboutus_aboutus_component__ = __webpack_require__("../../../../../src/app/home/components/aboutus/aboutus.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_contactus_contactus_component__ = __webpack_require__("../../../../../src/app/home/components/contactus/contactus.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_navbar_navbar_component__ = __webpack_require__("../../../../../src/app/home/components/navbar/navbar.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_news_news_component__ = __webpack_require__("../../../../../src/app/home/components/news/news.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_employment_employment_component__ = __webpack_require__("../../../../../src/app/home/components/employment/employment.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_academics_academics_component__ = __webpack_require__("../../../../../src/app/home/components/academics/academics.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_feestructure_feestructure_component__ = __webpack_require__("../../../../../src/app/home/components/feestructure/feestructure.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_admissions_admissions_component__ = __webpack_require__("../../../../../src/app/home/components/admissions/admissions.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__ = __webpack_require__("../../../../../src/app/home/components/login/login.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__components_history_history_component__ = __webpack_require__("../../../../../src/app/home/components/history/history.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomeModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1034,6 +1193,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -1056,10 +1217,11 @@ var HomeModule = (function () {
 HomeModule = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["i" /* CommonModule */],
-            __WEBPACK_IMPORTED_MODULE_2__home_routing_module__["a" /* HomeRoutingModule */]
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["c" /* CommonModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
+            __WEBPACK_IMPORTED_MODULE_3__home_routing_module__["a" /* HomeRoutingModule */]
         ],
-        declarations: [__WEBPACK_IMPORTED_MODULE_3__home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_4__components_dashboard_dashboard_component__["a" /* DashboardComponent */], __WEBPACK_IMPORTED_MODULE_5__components_aboutus_aboutus_component__["a" /* AboutusComponent */], __WEBPACK_IMPORTED_MODULE_6__components_contactus_contactus_component__["a" /* ContactusComponent */], __WEBPACK_IMPORTED_MODULE_7__components_navbar_navbar_component__["a" /* NavbarComponent */], __WEBPACK_IMPORTED_MODULE_8__components_news_news_component__["a" /* NewsComponent */], __WEBPACK_IMPORTED_MODULE_9__components_employment_employment_component__["a" /* EmploymentComponent */], __WEBPACK_IMPORTED_MODULE_10__components_academics_academics_component__["a" /* AcademicsComponent */], __WEBPACK_IMPORTED_MODULE_11__components_feestructure_feestructure_component__["a" /* FeestructureComponent */], __WEBPACK_IMPORTED_MODULE_12__components_admissions_admissions_component__["a" /* AdmissionsComponent */], __WEBPACK_IMPORTED_MODULE_13__components_login_login_component__["a" /* LoginComponent */]]
+        declarations: [__WEBPACK_IMPORTED_MODULE_4__home_component__["a" /* HomeComponent */], __WEBPACK_IMPORTED_MODULE_5__components_dashboard_dashboard_component__["a" /* DashboardComponent */], __WEBPACK_IMPORTED_MODULE_6__components_aboutus_aboutus_component__["a" /* AboutusComponent */], __WEBPACK_IMPORTED_MODULE_7__components_contactus_contactus_component__["a" /* ContactusComponent */], __WEBPACK_IMPORTED_MODULE_8__components_navbar_navbar_component__["a" /* NavbarComponent */], __WEBPACK_IMPORTED_MODULE_9__components_news_news_component__["a" /* NewsComponent */], __WEBPACK_IMPORTED_MODULE_10__components_employment_employment_component__["a" /* EmploymentComponent */], __WEBPACK_IMPORTED_MODULE_11__components_academics_academics_component__["a" /* AcademicsComponent */], __WEBPACK_IMPORTED_MODULE_12__components_feestructure_feestructure_component__["a" /* FeestructureComponent */], __WEBPACK_IMPORTED_MODULE_13__components_admissions_admissions_component__["a" /* AdmissionsComponent */], __WEBPACK_IMPORTED_MODULE_14__components_login_login_component__["a" /* LoginComponent */], __WEBPACK_IMPORTED_MODULE_15__components_history_history_component__["a" /* HistoryComponent */]]
     })
 ], HomeModule);
 

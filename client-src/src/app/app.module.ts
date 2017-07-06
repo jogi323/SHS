@@ -7,6 +7,9 @@ import { HttpModule } from '@angular/http';
 import { HomeModule } from './home/home.module';
 import { AdminModule } from './admin/admin.module';
 
+//Services 
+import { AppService } from './app.service';
+
 //Main Routing File
 import { routing } from './app-routing.module';
 
@@ -27,7 +30,7 @@ import { AppComponent } from './app.component';
     AdminModule,
     routing
   ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

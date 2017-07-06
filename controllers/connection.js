@@ -7,7 +7,7 @@ var userSchema = mongoose.Schema({
     lastName:String,
     email:String,
     password:String,
-    mobileNumber:Number
+    mobileNumber:String
 });
 
 var user = mongoose.model('usersdata',userSchema);

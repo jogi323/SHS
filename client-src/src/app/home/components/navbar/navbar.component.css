@@ -9,12 +9,12 @@ ul li:hover {
     background-color: #d04444;
 }
 a.active{
-    background-color: black !important;
+    background-color: #b56666 !important;
     /*color: red !important;*/
 }
-a.active[_ngcontent-c2]{
+/*a.active[_ngcontent-c2]{
     color: white;
-}
+}*/
 .dropdown-menu{
     background-color: rgba(4, 2, 3, 0.46) !important; 
   
