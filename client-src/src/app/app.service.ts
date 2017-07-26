@@ -21,4 +21,9 @@ export class AppService {
     headers.append('content-type','application/json;charset=utf-8');
     return this.http.post(this.url,this.data,{headers:headers}).map(res=>res.json());
   }
+   putService(){
+    var headers = new Headers;
+    headers.append('content-type','application/json;charset=utf-8');
+    return this.http.post(this.url,this.data,{headers:headers}).map(res=>res.json());
+  }
 }

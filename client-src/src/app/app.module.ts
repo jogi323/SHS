@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 //Lazy Loading Modules
-import { HomeModule } from './home/home.module';
-import { AdminModule } from './admin/admin.module';
+//import { HomeModule } from './home/home.module';
+//import { AdminModule } from './admin/admin.module';
 
 //Services 
 import { AppService } from './app.service';
@@ -26,8 +26,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    HomeModule,
-    AdminModule,
+    //HomeModule,
+    //AdminModule,
     routing
   ],
   providers: [AppService],

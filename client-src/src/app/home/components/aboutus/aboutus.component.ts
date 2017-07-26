@@ -8,7 +8,6 @@ import { Component, OnInit,Input } from '@angular/core';
 export class AboutusComponent implements OnInit {
   @Input() developer:String;
   constructor() { }
-
   ngOnInit() {
   }
 
