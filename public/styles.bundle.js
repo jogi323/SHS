@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([4],{
 
 /***/ "../../../../../src/assets/images/bg2.jpg":
 /***/ (function(module, exports, __webpack_require__) {
@@ -42,7 +42,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody{\n    background-color: rgba(204, 204, 204, 0.3) !important;\n    background-image: url(" + __webpack_require__("../../../../../src/assets/images/bg2.jpg") + ")\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\r\nbody{\r\n    background-color: rgba(204, 204, 204, 0.3) !important;\r\n    background-image: url(" + __webpack_require__("../../../../../src/assets/images/bg2.jpg") + ")\r\n}\r\n", ""]);
 
 // exports
 
